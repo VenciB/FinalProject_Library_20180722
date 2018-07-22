@@ -1,5 +1,7 @@
 package by.htp.library.jdbc.entity;
 
+import java.util.Arrays;
+
 public class Book {
 
 	private int yearOfPublishing;
@@ -46,11 +48,28 @@ public class Book {
 		} // end if - else
 		return authors;
 	}
-
 	
-	/** getters and setters:
+	
+	/**
+	 * Add quantity of available books:
+	 * @param addQuantity
 	 */
+	public void addQuantity( int addQuantity ) {
+		this.quantity += addQuantity;
+	}
+
+	/**
+	 * Substract quantity of available books:
+	 * @param substractQuantity
+	 */
+	public void substractQuantity( int substractQuantity ) {
+		this.quantity -= substractQuantity;
+	}
 	
+	
+	/** 
+	 * getters and setters:
+	 */
 	public int getYearOfPublishing() {
 		return yearOfPublishing;
 	}
@@ -91,15 +110,35 @@ public class Book {
 		this.quantity = quantity;
 	}
 
+	public int getBooksRentedOut() {
+		return booksRentedOut;
+	}
+
+	public void setBooksRentedOut(int booksRentedOut) {
+		this.booksRentedOut = booksRentedOut;
+	}
+	
 	public Author[] getAuthors() {
 		return authors;
 	}
 
 	public void setAuthors(Author[] authors) {
 		this.authors = authors;
-	}	
-	
-	/** end getters and setters:
+	}
+	/** 
+	 * end getters and setters.
 	 */
+	
+	
+	/**
+	 * to String method
+	 */
+	@Override
+	public String toString() {
+		return "Book [yearOfPublishing=" + yearOfPublishing + ", title=" + title + ", publisher=" + publisher
+				+ ", book_id=" + book_id + ", quantity=" + quantity + ", booksRentedOut=" + booksRentedOut
+				+ ", authors=" + Arrays.toString(authors) + "]";
+	}
+	
 
 } // end class
