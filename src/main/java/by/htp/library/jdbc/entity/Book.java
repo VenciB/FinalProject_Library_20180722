@@ -4,17 +4,36 @@ public class Book {
 
 	private int yearOfPublishing;
 	private String title;
+	private String publisher;
 	private int book_id;
+	private int quantity;
+	private int booksRentedOut;
 	private Author[] authors;
 
-	public Book(int yearOfPublishing, String title, int book_id, Author... listofauthors) {
+	/**
+	 * Constructor
+	 * @param yearOfPublishing
+	 * @param title
+	 * @param publisher
+	 * @param book_id
+	 * @param quantity
+	 * @param listofauthors
+	 */
+	public Book(int yearOfPublishing, String title, String publisher, int book_id, int quantity, Author... listofauthors) {
 		this.yearOfPublishing = yearOfPublishing;
 		this.title = title;
+		this.publisher = publisher;
 		this.book_id = book_id;
+		this.quantity = quantity;
+		this.booksRentedOut = 0;
 		this.authors = createAuthorsArray(listofauthors);
-
 	}
 
+	/**
+	 * Create a list of authors method.
+	 * @param listofauthors
+	 * @return
+	 */
 	private Author[] createAuthorsArray(Author... listofauthors) {
 		if (listofauthors.length == 0) {
 			authors = new Author[1];
@@ -28,20 +47,59 @@ public class Book {
 		return authors;
 	}
 
+	
+	/** getters and setters:
+	 */
+	
 	public int getYearOfPublishing() {
 		return yearOfPublishing;
+	}
+
+	public void setYearOfPublishing(int yearOfPublishing) {
+		this.yearOfPublishing = yearOfPublishing;
 	}
 
 	public String getTitle() {
 		return title;
 	}
 
-	public Author[] getAuthor() {
-		return authors;
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getPublisher() {
+		return publisher;
+	}
+
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
 	}
 
 	public int getBook_id() {
 		return book_id;
 	}
 
-}
+	public void setBook_id(int book_id) {
+		this.book_id = book_id;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public Author[] getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(Author[] authors) {
+		this.authors = authors;
+	}	
+	
+	/** end getters and setters:
+	 */
+
+} // end class
