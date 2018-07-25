@@ -22,9 +22,12 @@ public class Node {
 	 * print one book information
 	 */
 	public void printNodeBook( ) {
-		System.out.println( "Book id: " + nodeBook.getBook_id() + ", " 
-						+ "book title: " + nodeBook.getTitle() + ", " 
-						+ "author: " + nodeBook.getAuthor() + ", " 
-						+ "year publishing: " + nodeBook.getYearOfPublishing() + "." );
+		System.out.println( "Book id: " + nodeBook.getBook_id() + " | " 
+						+ "Title: " + nodeBook.getTitle() + " | " 
+						+ "Author: " + nodeBook.getAuthor() + " | " 
+						+ "Year: " + nodeBook.getYearOfPublishing() + " | " 
+						+ "Quantity: " + nodeBook.getQuantity() + " | "
+						+ "Available: " + ( nodeBook.getQuantity() - nodeBook.getBooksRentedOut() ) + "."
+						);
 	}
 }
