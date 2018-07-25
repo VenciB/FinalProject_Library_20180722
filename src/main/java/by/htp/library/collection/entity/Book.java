@@ -16,11 +16,13 @@ public class Book {
 	 * @param author
 	 * @param yearOfPublishing
 	 */
-	public Book( int book_id, String title, String author, int yearOfPublishing ) {
+	public Book( int book_id, String title, String author, int yearOfPublishing, int quantity ) {
 		this.book_id = book_id;
 		this.title = title;
 		this.author = author;
 		this.yearOfPublishing = yearOfPublishing;
+		this.quantity = quantity;
+		this.booksRentedOut = 0;
 	} // end constructor
 
 	public int getBook_id() {

@@ -6,7 +6,7 @@ public class MainLibrary {
 
 	public static void main(String[] args) {
 		
-		// create and load a library with Collection:
+		// create and load a library with Collection, Singleton pattern:
 		CreateAndLoadLibrary libraryCreator = new CreateAndLoadLibrary();
 		BookLinkedList libraryLinkedList = libraryCreator.createAndLoadLibrary();
 		
