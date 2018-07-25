@@ -1,5 +1,8 @@
 package by.htp.library.collection.entity;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class Book {
 
 	private int book_id;
@@ -8,6 +11,7 @@ public class Book {
 	private int yearOfPublishing;
 	private int quantity;
 	private int booksRentedOut;
+	private ArrayList<LocalDate> datesRented;
 	
 	/**
 	 * CONSTRUCTOR
@@ -23,6 +27,7 @@ public class Book {
 		this.yearOfPublishing = yearOfPublishing;
 		this.quantity = quantity;
 		this.booksRentedOut = 0;
+		this.datesRented = new ArrayList<LocalDate>();
 	} // end constructor
 
 	public int getBook_id() {
