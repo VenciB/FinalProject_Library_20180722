@@ -22,7 +22,7 @@ public class Node {
 	 * print one book information
 	 */
 	public void printNodeBook( ) {
-		System.out.println( "Book id: " + nodeBook.getBook_id() + " | " 
+		System.out.println( "Book id: " + nodeBook.getBookId() + " | " 
 						+ "Title: " + nodeBook.getTitle() + " | " 
 						+ "Author: " + nodeBook.getAuthor() + " | " 
 						+ "Year: " + nodeBook.getYearOfPublishing() + " | " 

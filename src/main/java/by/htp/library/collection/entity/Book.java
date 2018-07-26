@@ -2,7 +2,7 @@ package by.htp.library.collection.entity;
 
 public class Book {
 
-	private int book_id;
+	private int bookId;
 	private String title;
 	private String author;
 	private int yearOfPublishing;
@@ -11,13 +11,13 @@ public class Book {
 	
 	/**
 	 * CONSTRUCTOR
-	 * @param book_id
+	 * @param bookId
 	 * @param title
 	 * @param author
 	 * @param yearOfPublishing
 	 */
-	public Book( int book_id, String title, String author, int yearOfPublishing, int quantity ) {
-		this.book_id = book_id;
+	public Book( int bookId, String title, String author, int yearOfPublishing, int quantity ) {
+		this.bookId = bookId;
 		this.title = title;
 		this.author = author;
 		this.yearOfPublishing = yearOfPublishing;
@@ -25,12 +25,12 @@ public class Book {
 		this.booksRentedOut = 0;
 	} // end constructor
 
-	public int getBook_id() {
-		return book_id;
+	public int getBookId() {
+		return bookId;
 	}
 	
-	public void setBook_id(int book_id) {
-		this.book_id = book_id;
+	public void setBookId(int bookId) {
+		this.bookId = bookId;
 	}
 
 	public int getYearOfPublishing() {

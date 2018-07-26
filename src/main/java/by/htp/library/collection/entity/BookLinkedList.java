@@ -73,15 +73,15 @@ public class BookLinkedList {
 	/**
 	 * delete one book from the list 
 	 * with the book_id
-	 * @param book_id
+	 * @param bookId
 	 */
-	public void deleteBook( int book_id ) {
+	public void deleteBook( int bookId ) {
 		Node current = first;
 		
-		while( current.nodeBook.getBook_id() != book_id ) {
+		while( current.nodeBook.getBookId() != bookId ) {
 			current = current.next;
 			if( current == null ) {
-				System.out.println("No book with id " + book_id + " found.");
+				System.out.println("No book with id " + bookId + " found.");
 				return;
 			}
 		} // end while 
@@ -97,7 +97,7 @@ public class BookLinkedList {
 			current.next.previous = current.previous;
 		}
 		numOfBooks--;
-		System.out.println("Book with id " + book_id + " was removed.");
+		System.out.println("Book with id " + bookId + " was removed.");
 	} // end deleteBook
 
 	
