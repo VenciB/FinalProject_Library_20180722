@@ -19,7 +19,6 @@ public class CreateAndLoadLibrary {
 	
 	/**
 	 * create and return a Singleton object
-	 * @return
 	 */
 	private BookLinkedList createLibrary() {
 		return BookLinkedList.getInstance();

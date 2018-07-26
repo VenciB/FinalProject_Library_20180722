@@ -25,7 +25,7 @@ public class Reader {
 	public Reader(String name, String surname, String phoneNumber, int readerId, String password) {
 		this.name = name;
 		this.surname = surname;
-		this.patronymic = "";
+		this.patronymic = "NONE";
 		this.phoneNumber = phoneNumber;
 		this.readerId = readerId;
 		this.password = password;

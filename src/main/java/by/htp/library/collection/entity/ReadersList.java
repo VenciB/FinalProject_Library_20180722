@@ -47,4 +47,8 @@ public class ReadersList {
 		return listOfLibraryReaders.get( readerIndex );
 	}
 	
+	public int getReadersListSize( ) {
+		return listOfLibraryReaders.size();
+	}
+	
 }
