@@ -4,23 +4,14 @@ import by.htp.library.collection.entity.ReadersList;
 
 public class CreateAndLoadReaders {
 	
-	protected ReadersList createAndLoadReaders( ) {
+	protected ReadersList createAndLoadReaders( ReadersList readersList ) {
 		
-		// get Singleton readers list:
-		ReadersList newReadersList = createReadersList( );
-
 		// load the readers list with readers:
 		LoadReaders readersLoader = new LoadReaders();
-		readersLoader.loadReaders( newReadersList );
+		readersLoader.loadReaders( readersList );
 
 		// return populated readers list:
-		return newReadersList;
+		return readersList;
 	}
-
-	/**
-	 * create and return a Singleton object
-	 */
-	private ReadersList createReadersList() {
-		return ReadersList.getInstance();
-	}
+	
 }

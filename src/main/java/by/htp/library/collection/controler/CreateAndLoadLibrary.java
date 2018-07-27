@@ -4,23 +4,14 @@ import by.htp.library.collection.entity.BookLinkedList;
 
 public class CreateAndLoadLibrary {
 
-	protected BookLinkedList createAndLoadLibrary() {
-		
-		// get Singleton library object:
-		BookLinkedList newLibrary = createLibrary();
+	protected BookLinkedList createAndLoadLibrary( BookLinkedList libraryLinkedList ) {
 		
 		// load the library with the books:
 		LoadLibrary libraryLoader = new LoadLibrary();
-		libraryLoader.loadLibrary(newLibrary);
+		libraryLoader.loadLibrary( libraryLinkedList );
 		
 		// return ready library:
-		return newLibrary;
+		return libraryLinkedList;
 	}
 	
-	/**
-	 * create and return a Singleton object
-	 */
-	private BookLinkedList createLibrary() {
-		return BookLinkedList.getInstance();
-	}
 }

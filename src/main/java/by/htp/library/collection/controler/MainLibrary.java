@@ -5,20 +5,27 @@ import by.htp.library.collection.entity.ReadersList;
 
 public class MainLibrary {
 
+	static GetAnswer ga = new GetAnswer();
+	static String answerLoad = null;
+	static LoaderFactory lf = new LoaderFactory();
+	static LoadLibraryAndReaders llar;
+	// create Singleton library object:
+	static BookLinkedList libraryLinkedList = BookLinkedList.getInstance();
+	// create Singleton readers list:
+	static ReadersList readersList = ReadersList.getInstance();
+
 	public static void main(String[] args) {
-		
-		// create and load a library with Collection, Singleton pattern:
-		CreateAndLoadLibrary libraryCreator = new CreateAndLoadLibrary();
-		BookLinkedList libraryLinkedList = libraryCreator.createAndLoadLibrary();
+
+		answerLoad = ga.getString("In which mode to continue?\n" 
+									+ "1) COLLECTION\n"
+									+ "2) DATABASE");
+		llar = lf.loadLibraryAndReaders( answerLoad ); 
+		llar.loadLibraryAndReaders(libraryLinkedList, readersList);
 		
 		// just testing:
 		libraryLinkedList.showAllBooksForward();
 		libraryLinkedList.showAllBooksBackword();
-		
-		// create and load a list of readers:
-		CreateAndLoadReaders readersCreator = new CreateAndLoadReaders();
-		ReadersList readersList = readersCreator.createAndLoadReaders();
-		
+
 		//  just testing:
 		for( int i = 0; i < readersList.getReadersListSize(); i++ ) {
 			System.out.println(
