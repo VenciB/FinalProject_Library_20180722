@@ -1,0 +1,61 @@
+-- --------------------------------------------------------
+-- Хост:                         127.0.0.1
+-- Версия сервера:               5.7.22-log - MySQL Community Server (GPL)
+-- Операционная система:         Win64
+-- HeidiSQL Версия:              9.5.0.5196
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+-- dump structure of database library
+CREATE DATABASE IF NOT EXISTS `library` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `library`;
+
+-- dump structure of table library.author
+CREATE TABLE IF NOT EXISTS `author` (
+  `ID_author` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(50) NOT NULL DEFAULT '0',
+  `surname` char(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID_author`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+
+-- dump structure of table library.book
+CREATE TABLE IF NOT EXISTS `book` (
+  `ID_book` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_publisher` int(11) NOT NULL DEFAULT '0',
+  `name` char(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID_book`),
+  KEY `FK_BOOK_PUBLISHER` (`ID_publisher`),
+  CONSTRAINT `FK_BOOK_PUBLISHER` FOREIGN KEY (`ID_publisher`) REFERENCES `publisher` (`ID_publisher`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+
+-- dump structure of table library.book_author
+CREATE TABLE IF NOT EXISTS `book_author` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_book` int(11) NOT NULL DEFAULT '0',
+  `ID_author` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  KEY `FK_book` (`ID_book`),
+  KEY `FK_author` (`ID_author`),
+  CONSTRAINT `FK_author` FOREIGN KEY (`ID_author`) REFERENCES `author` (`ID_author`),
+  CONSTRAINT `FK_book` FOREIGN KEY (`ID_book`) REFERENCES `book` (`ID_book`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- dump structure of table library.publisher
+CREATE TABLE IF NOT EXISTS `publisher` (
+  `ID_publisher` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID_publisher`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
