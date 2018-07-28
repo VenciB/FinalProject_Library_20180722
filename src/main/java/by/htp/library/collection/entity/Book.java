@@ -10,6 +10,12 @@ public class Book {
 	private int booksRentedOut;
 	
 	/**
+	 * EMPTY CONSTRUCTOR
+	 */
+	public Book() {
+	}
+	
+	/**
 	 * CONSTRUCTOR
 	 * @param bookId
 	 * @param title
