@@ -12,7 +12,7 @@ public class LoaderFactory {
 			System.out.println("here cl");
 			return new CollectionLoader();
 		} else if( loadType.equalsIgnoreCase( "DATABASE" ) ) {
-			// return new JDBCLoader();
+			// return new DatabaseLoader();
 		}
 		
 		return null;

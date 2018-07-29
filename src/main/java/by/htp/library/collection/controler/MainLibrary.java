@@ -16,7 +16,7 @@ public class MainLibrary {
 
 	public static void main(String[] args) {
 
-		answerLoad = ga.getString("In which mode to continue?\n" + "1) COLLECTION\n" + "2) DATABASE");
+		answerLoad = ga.getString("Hello. In which mode to continue?\n" + "1) COLLECTION\n" + "2) DATABASE\n" + "Type your answer below:");
 		llar = lf.loadLibraryAndReaders( answerLoad ); 
 		llar.loadLibraryAndReaders(libraryLinkedList, readersList);
 		
